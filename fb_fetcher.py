@@ -59,22 +59,23 @@ def set_params(
         "app_secret": APP_SECRET,
     }
 
+if __name__ == "__main__":
 
-load_dotenv()
+    load_dotenv()
 
-AD_ACCOUNT_ID = "(your ad account id)"  # For trying, fill this
-ACT_ = "act_"
-APP_ID = os.getenv("META_APP_ID")
-APP_SECRET = os.getenv("META_APP_SECRET ")
-META_TOKEN = os.getenv("META_API_ACCESS_TOKEN")
-FacebookAdsApi.init(access_token=META_TOKEN, api_version="v20.0")
+    AD_ACCOUNT_ID = "(your ad account id)"  # For trying, fill this
+    ACT_ = "act_"
+    APP_ID = os.getenv("META_APP_ID")
+    APP_SECRET = os.getenv("META_APP_SECRET ")
+    META_TOKEN = os.getenv("META_API_ACCESS_TOKEN")
+    FacebookAdsApi.init(access_token=META_TOKEN, api_version="v20.0")
 
-params = set_params(
-    date_since="2025-07-06",
-    date_until="2025-07-06",
-)
+    params = set_params(
+        date_since="2025-07-06",
+        date_until="2025-07-06",
+    )
 
-try:
-    print(contact_api(["spend"], params, AD_ACCOUNT_ID))
-except FacebookRequestError as e:
-    print(str(e))
+    try:
+        print(contact_api(["spend"], params, AD_ACCOUNT_ID))
+    except FacebookRequestError as e:
+        print(str(e))
