@@ -45,8 +45,8 @@ def set_params(
 
 load_dotenv()
 
+AD_ACCOUNT_ID = "(your ad account id)" # For trying, fill this
 ACT_ = "act_"
-AD_ACCOUNT_ID = "(your ad account id)"
 APP_ID = os.getenv("META_APP_ID")
 APP_SECRET = os.getenv("META_APP_SECRET ")
 META_TOKEN = os.getenv("META_API_ACCESS_TOKEN")
